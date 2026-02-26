@@ -1,8 +1,8 @@
 // frontend/app/layout.tsx
-// Root layout for Phalanx frontend
 
 import type { Metadata } from 'next';
-import './globals.css';  // Assume you'll add this next
+import './globals.css';
+import { Providers } from './providers'; // Import the new file
 
 export const metadata: Metadata = {
   title: 'Phalanx OS — Rusk-It',
@@ -16,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-950 antialiased">{children}</body>
+      <body className="bg-zinc-950 antialiased">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
